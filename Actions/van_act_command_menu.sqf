@@ -1,4 +1,4 @@
 if(!V_CLIENT) exitWith {};
 
-createDialog "VanquishDialog";
-buttonSetAction[1600, "createDialog ""SupportDialog"""];
+createDialog "VanquishSupportDialog";
+//buttonSetAction[1600, "createDialog ""SupportDialog"""];

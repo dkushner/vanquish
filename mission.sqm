@@ -22,7 +22,6 @@ class Mission
 		"A3_Misc_F_Helpers",
 		"A3_Soft_F_Quadbike",
 		"a3_air_f_ka60",
-		"A3_Structures_F_Civ_Camping",
 		"A3_Weapons_F_Ammoboxes",
 		"A3_Soft_F_Hunter",
 		"a3_map_stratis"
@@ -43,6 +42,8 @@ class Mission
 		day=6;
 		hour=14;
 		minute=15;
+		startFogDecay=0.0049333;
+		forecastFogDecay=0.0049333;
 	};
 	class Groups
 	{
@@ -247,7 +248,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=18;
+		items=17;
 		class Item0
 		{
 			position[]={1917.0085,5.5,5911.0298};
@@ -365,20 +366,9 @@ class Mission
 		};
 		class Item12
 		{
-			position[]={1871.8398,5.6072683,5751.6138};
-			azimut=-123.177;
-			id=19;
-			side="EMPTY";
-			vehicle="Land_FieldToilet_F";
-			leader=1;
-			lock="UNLOCKED";
-			skill=0.60000002;
-		};
-		class Item13
-		{
 			position[]={1866.1041,5.5277214,5740.9844};
 			azimut=-71.504799;
-			id=20;
+			id=19;
 			side="EMPTY";
 			vehicle="B_supplyCrate_F";
 			leader=1;
@@ -386,9 +376,20 @@ class Mission
 			skill=0.60000002;
 			init="_null = [this] execVM ""Map\van_weapons_crate.sqf"";";
 		};
-		class Item14
+		class Item13
 		{
 			position[]={1834.8016,5.5,5769.5562};
+			azimut=12.353621;
+			id=20;
+			side="EMPTY";
+			vehicle="B_Hunter_RCWS_F";
+			leader=1;
+			lock="UNLOCKED";
+			skill=0.60000002;
+		};
+		class Item14
+		{
+			position[]={1830.3522,5.5,5770.7983};
 			azimut=12.353621;
 			id=21;
 			side="EMPTY";
@@ -399,7 +400,7 @@ class Mission
 		};
 		class Item15
 		{
-			position[]={1830.3522,5.5,5770.7983};
+			position[]={1831.9567,5.5,5759.8262};
 			azimut=12.353621;
 			id=22;
 			side="EMPTY";
@@ -410,20 +411,9 @@ class Mission
 		};
 		class Item16
 		{
-			position[]={1831.9567,5.5,5759.8262};
-			azimut=12.353621;
-			id=23;
-			side="EMPTY";
-			vehicle="B_Hunter_RCWS_F";
-			leader=1;
-			lock="UNLOCKED";
-			skill=0.60000002;
-		};
-		class Item17
-		{
 			position[]={1827.5072,5.5,5761.0684};
 			azimut=12.353621;
-			id=24;
+			id=23;
 			side="EMPTY";
 			vehicle="B_Hunter_RCWS_F";
 			leader=1;
@@ -443,7 +433,7 @@ class Mission
 	};
 	class Sensors
 	{
-		items=6;
+		items=7;
 		class Item0
 		{
 			position[]={1718.4948,5.5,5730.5542};
@@ -530,6 +520,22 @@ class Mission
 			{
 			};
 		};
+		class Item6
+		{
+			position[]={1808.505,5.5,5680.2065};
+			a=20;
+			b=20;
+			activationBy="WEST";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="MotorServiceArea";
+			expCond="true";
+			expActiv="_handle = [thistrigger, ""Car""] execVM ""Map\van_service_area.sqf"";";
+			class Effects
+			{
+			};
+		};
 	};
 };
 class Intro
@@ -558,6 +564,8 @@ class Intro
 		day=6;
 		hour=14;
 		minute=15;
+		startFogDecay=0.0049333;
+		forecastFogDecay=0.0049333;
 	};
 };
 class OutroWin
@@ -586,6 +594,8 @@ class OutroWin
 		day=6;
 		hour=14;
 		minute=15;
+		startFogDecay=0.0049333;
+		forecastFogDecay=0.0049333;
 	};
 };
 class OutroLoose
@@ -614,5 +624,7 @@ class OutroLoose
 		day=6;
 		hour=14;
 		minute=15;
+		startFogDecay=0.0049333;
+		forecastFogDecay=0.0049333;
 	};
 };

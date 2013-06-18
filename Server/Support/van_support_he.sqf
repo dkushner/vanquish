@@ -12,6 +12,10 @@ private ["_pos", "_i"];
 
 _pos = getMarkerPos "SupportMarker";
 
+[West, "HQ"] sideChat "Loading 10 round HE fire mission. Stand by.";
+sleep 3;
+[West, "HQ"] sideChat "Firing for effect. Shot out.";
+
 sleep 7;
 for "_i" from 0 to 9 do
 {

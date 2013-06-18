@@ -35,3 +35,4 @@ van_support_options =
 ];
 
 createMarkerLocal ["SupportMarker", [0, 0, 0]];
+"SupportMarker" setMarkerBrush "Solid";

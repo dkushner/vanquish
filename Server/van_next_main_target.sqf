@@ -50,9 +50,31 @@ _trigger_condition = "(""Man"" countType thislist <= van_mt_inf_threshold) &&" +
 					 "(""Tank"" countType thislist <= van_mt_armor_threshold) &&" +
 					 "(""Car"" countType thislist <= van_mt_motor_threshold)";
 
-_trigger_action = "_handle = [] execVM ""Server\van_clear_main_target.sqf""";
+_trigger_action = "[(""MainTask"" + format[""%1"", van_mt_index]), ""Succeeded""] call BIS_fnc_taskSetState;" +
+				  "_handle = [] execVM ""Server\van_clear_main_target.sqf"";";
 
 van_completion_trigger setTriggerStatements [_trigger_condition, _trigger_action, ""];
 
 // Set up a global marker after the next mission has been successfully set up.
 ["MainTarget", van_completion_trigger] call BIS_fnc_markerToTrigger;
+"MainTarget" setMarkerColor "ColorRed";
+"MainTarget" setMarkerText "Main Target";
+
+private ["_task_marker", "_task_title", "_task_description"];
+// Create and announce new task for the targ
+_task_marker = createMarker ["MainTaskMarker", [0, 0, 0]];
+"MainTaskMarker" setMarkerPos _mission_pos;
+"MainTaskMarker" setMarkerShape "ICON";
+"MainTaskMarker" setMarkerType "mil_warning";
+"MainTaskMarker" setMarkerText "Main Target";
+"MainTaskMarker" setMarkerColor "ColorBlack";
+
+_task_title = "Assault " + _mission_name;
+_task_description = "You have been tasked with entering the primary area of operations <br />" +
+					"and eliminating any resistance you find there. To capture the location <br />" +
+					"you must complete the following components of your assignment: <br /><br />" +
+					"* Neutralize the commanding officer.<br />" +
+					"* Claim control of the enemy's outposts.<br />" +
+					"* Destroy any radio towers.<br />";
+
+[player, "MainTask" + format["%1", van_mt_index], [_task_description, _task_title, "MainTaskMarker"], objNull, true] call BIS_fnc_taskCreate;  

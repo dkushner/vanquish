@@ -59,6 +59,7 @@ class VanquishSupportDialog
 			y = 8.5 * GUI_GRID_H + GUI_GRID_Y;
 			w = 17.5 * GUI_GRID_W;
 			h = 13.5 * GUI_GRID_H;
+			onMouseButtonDown = "[_this] spawn van_dialog_setSupportMarker;";
 		};
 
 		class SupportText: RscText
@@ -108,6 +109,7 @@ class VanquishSupportDialog
 			y = 8.5 * GUI_GRID_H + GUI_GRID_Y;
 			w = 12 * GUI_GRID_W;
 			h = 1 * GUI_GRID_H;
+			onLBSelChanged = "_this spawn van_dialog_setSupportType;";
 		};
 
 		class SupportOptionCombo: RscCombo
@@ -132,4 +134,3 @@ class VanquishSupportDialog
 		};
 	};
 };
-

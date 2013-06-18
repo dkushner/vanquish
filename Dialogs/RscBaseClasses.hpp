@@ -158,7 +158,6 @@ class RscMapControl
 	idc = 51;
 	style = 48;
 	shadow = 0;
-	onMouseButtonDown = "[_this] spawn van_dialog_setSupportMarker;";
 	colorBackground[] = {1,1,1,1};
 	colorOutside[] = {1,1,1,1};
 	colorText[] = {0,0,0,1};

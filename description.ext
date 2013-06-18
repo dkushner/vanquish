@@ -4,4 +4,5 @@ respawnDialog=false;
 
 #include "Dialogs\RscBaseClasses.hpp"
 #include "Dialogs\VanquishSupportDialog.hpp"
-
+#include "Dialogs\VanquishGroupManagement.hpp"
+#include "Dialogs\VanquishHaloDialog.hpp"

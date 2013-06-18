@@ -3,6 +3,5 @@ respawnDelay=5;
 respawnDialog=false;
 
 #include "Dialogs\RscBaseClasses.hpp"
-#include "Dialogs\SupportDialog.hpp"
-#include "Dialogs\VanquishDialog.hpp"
+#include "Dialogs\VanquishSupportDialog.hpp"
 
